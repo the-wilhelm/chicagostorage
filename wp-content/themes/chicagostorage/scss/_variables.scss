@@ -1,0 +1,32 @@
+
+$brand-color-1: #ed3138; // red
+$brand-color-2: #448ccb; // blue
+$brand-color-3: #1c3654; // dark blue
+$brand-color-4: #d6edff; // light blue
+$brand-color-5: #999; //gray
+$brand-color-6: #1f2f3d; // deep dark blue 
+
+$base-text-color: #333; // dark gray
+$base-background-color: #fff; // white
+$base-link-color: $brand-color-2;
+$base-form-text-color: #000; //black
+$base-form-placeholder-color: #000; //gray
+$base-input-border-color: #8896a0;
+
+
+$base-border-radius: 8px;
+$page-width: 320px;
+$page-padding: 15px;
+
+$base-font-size: 16px;
+$base-line-height: 1.25;
+$base-font-family: Montserrat, Arial, sans-serif;
+
+%main-heading{
+	font-size: $base-font-size + 12; // 16+12=28
+	line-height: 1;
+	color: $brand-color-1;
+	font-weight: 400;
+	margin-bottom: 28px;
+}
+

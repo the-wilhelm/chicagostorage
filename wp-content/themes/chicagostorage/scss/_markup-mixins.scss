@@ -1,0 +1,110 @@
+// clearfix
+%clearfix {
+	&:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+}
+@mixin container($paddings:0, $max-width: $page-width){
+	.container{
+		margin: 0 auto;
+		max-width: $max-width;
+		@extend %clearfix;
+		padding: $paddings;
+	}
+}
+@mixin make-btn($bg: $brand-color-2, $font-size: 12px, $paddings:12px 22px, $min-width:0, $radius: $base-border-radius){
+	display: inline-block;
+	text-decoration: none;
+	border: none;
+	color: #fff;
+	font-weight: 700;
+	text-transform: uppercase;
+	min-width: $min-width;
+	padding: $paddings;
+	background: $bg;
+	border-radius: $radius;
+	font-size: $font-size;
+	&:hover{
+		opacity: .9;
+	}
+}
+
+@mixin make-btn-w-border($border:6px, $bg: $brand-color-2, $font-size: 12px, $paddings:10px 22px, $min-width:0, $radius: $base-border-radius){
+	display: inline-block;
+	text-decoration: none;
+	border: none;
+	vertical-align: top;
+	color: #fff;
+	font-weight: 700;
+	text-transform: uppercase;
+	border-bottom: $border;
+	background: darken( $bg, 35%); 
+	border-radius: $radius;
+	font-size: $font-size;
+	padding-bottom: $border;
+	text-align: center;
+	& span{
+		display: inherit;
+		min-width: $min-width;
+		padding: $paddings;
+		background: $bg;
+		vertical-align: top;
+		border-radius: $radius;
+	}
+	&:hover{
+		opacity: .9;
+	}
+}
+
+@mixin double-border($border-1-width: 1px, $border-2-width: 1px, $color: $brand-color-2, $paddings:10px){
+	position: relative;
+	z-index: 1;
+	border: #{$border-1-width} solid #{$color};
+	padding: $paddings;
+	background: #fff; 
+	&:before{
+		position: absolute;
+		content: '';
+		z-index: -1;
+		top:$border-2-width;
+		bottom: $border-2-width;
+		right: $border-2-width;
+		left: $border-2-width;
+		background: $color;
+	}
+}
+
+// reset for list
+%listreset {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// full size
+%full-width {
+	margin: 0 -#{$page-padding};
+}
+
+// hide text
+@mixin hide-text {
+	overflow: hidden;
+	text-indent: -9999px;
+}
+
+// box sizing
+@mixin box-sizing($type: border-box) {
+	-webkit-box-sizing: $type;
+		 -moz-box-sizing: $type;
+					box-sizing: $type;
+}
+
+// placeholder
+@mixin placeholder {
+	::-webkit-input-placeholder {@content}
+	::-moz-placeholder					{opacity: 1; @content}
+	:-ms-input-placeholder			{@content}
+	.placeholder								{@content}
+}
