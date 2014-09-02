@@ -1,0 +1,60 @@
+<?php
+//        Private _SiteID As Integer = 0
+//        Private _AgentID As String = String.Empty
+//        Private _FacilityID As Integer = 0
+//        Private _UnitTypeID As Integer = 0
+//        Private _Width As Decimal = 0
+//        Private _Length As Decimal = 0
+//        Private _ResDeposit As Decimal = 0
+//        Private _ReserveUntilDate As String = String.Empty
+//        Private _ReserveUntilDateLong As String = String.Empty
+//        Private _FirstName As String = String.Empty
+//        Private _LastName As String = String.Empty
+//        Private _Address As String = String.Empty
+//        Private _City As String = String.Empty
+//        Private _State As String = String.Empty
+//        Private _PostalCode As String = String.Empty
+//        Private _Email As String = String.Empty
+//        Private _PhoneNumber As String = String.Empty
+//        Private _CCType As String = String.Empty
+//        Private _CCNameOnCard As String = String.Empty
+//        Private _CCNumber As Long = 0
+//        Private _CCExpMonth As Long = 0
+//        Private _CCExpYear As Long = 0
+//        Private _CCCVVcode As String = String.Empty
+//        Private _RentalRate As Decimal = 0
+//        Private _AmountToApply As Decimal = 0
+//        Private _ReserveOrderID As Decimal = 0
+//        Private _ConfirmationID As String = "0"
+//        Private _ReservationError As String = String.Empty  
+$reservation = array('SiteID'=>0,
+                     'AgentID'=>"",
+                     'FacilityID'=>0,
+                     'UnitTypeID'=>0,
+                     'Width'=>0,
+                     'Length'=>0,
+                     'ResDeposit'=>0,
+                     'ReserveUntilDate'=>"",
+                     'ReserveUntilDateLong'=>"",
+                     'FirstName'=>"",
+                     'LastName'=>"",
+                     'Address'=>"",
+                     'City'=>"",
+                     'State'=>"",
+                     'PostalCode'=>"",
+                     'Email'=>"",
+                     'PhoneNumber'=>"",
+                     'CCType'=>"",
+                     'CCNameOnCard'=>"",
+                     'CCNumber'=>0,
+                     'CCExpMonth'=>0,
+                     'CCExpYear'=>0,
+                     'CCCVVcode'=>"",
+                     'RentalRate'=>0,
+                     'AmountToApply'=>0,
+                     'ReserveOrderID'=>0,
+                     'ConfirmationID'=>"",
+                     'ReservationError'=>""
+    );
+
+?>

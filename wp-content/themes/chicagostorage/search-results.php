@@ -48,7 +48,7 @@
            }
 
     }
-    
+
 ?>
 <?php get_header(); ?>
 <nav class="breadcrumbs">
@@ -66,61 +66,55 @@
  {
     foreach ($facilities as $facility):
    
+?>
+      <div class="item">
+        <div class="photo">
+          <img src="http://www.storage.com/z-images/<?php echo $facility->SiteSource; ?>/128x96/<?php echo $facility->Images->string[0]; ?>" class="attachment-archive-thumbnail wp-post-image" alt="img1" />
+        </div>
+        <div class="info">
+          <strong class="title"><a href="/facility/<?php echo $facility->Id  ?>"><?php echo $facility->Branding ?></a></strong>
+          <?php echo $facility->Address . "<br />"; 
+            echo $facility->City . " , " . $facility->StateAbbreviation . " " . $facility->PostalCode . "<br />";
+          ?>
+        </div>
+        <div class="row">  
+          <div class="price-holder">
+              <span><?php _e('units from','chicagostorage'); ?></span>
+             <strong><?php echo '$' . number_format($facility->StartingAtPrice, 2); ?></strong>
+          </div>
+          <div class="btn-holder">
+              <a href="/<?php echo display_url($facility->Branding) . '-' . display_url($facility->Address) . '-' . display_url($facility->City) . '-' . $facility->StateAbbreviation . '-'. $facility->PostalCode .'/' . $facility->Id . '/' ?>" class="btn"><?php _e('more info','chicagostorage'); ?></a>
+          </div>
+        </div>
+      </div>
+<?php
+    endforeach;
+  }
+  elseif (!empty($facilities) && $facilities->ReplyCode <> -1){
+    $facility = $facilities;
+?>
+    <div class="item">
+      <div class="photo">
+        <img src="http://www.storage.com/z-images/<?php echo $facility->SiteSource; ?>/128x96/<?php echo $facility->Images->string[0]; ?>" class="attachment-archive-thumbnail wp-post-image" alt="img1" />
+      </div>
+      <div class="info">
+        <strong class="title"><a href="/facility/<?php echo $facility->Id  ?>"><?php echo $facility->Branding ?></a></strong>
+        <?php echo $facility->Address . "<br />"; 
+          echo $facility->City . " , " . $facility->StateAbbreviation . " " . $facility->PostalCode . "<br />";
         ?>
-
-        <div class="item">
-
-           <div class="photo">
-               <img width="128" height="96" src="http://www.storage.com/z-images/<?php echo $facility->SiteSource; ?>/128x96/<?php echo $facility->Images->string[0]; ?>" class="attachment-archive-thumbnail wp-post-image" alt="img1" />
-           </div>
-
-       <div class="info">
-           <strong class="title"><a href="<?php echo "<a href='/facility/" . $facility->Id  ?>"><?php echo $facility->Branding ?></a></strong>
-               <?php echo $facility->Address . "<br />"; 
-                     echo $facility->City . " , " . $facility->StateAbbreviation . " " . $facility->PostalCode . "<br />";
-               ?>
-           <div class="rating"></div>
-       </div>
-           <div class="price-holder">
-               <span><?php _e('units from','chicagostorage'); ?></span>
-               <strong><?php echo '$' . number_format($facility->StartingAtPrice, 2); ?></strong>
-           </div>
-       <div class="btn-holder">
-           <?php echo "<a href='/" . display_url($facility->Branding) . "-" . display_url($facility->Address) . "-" . display_url($facility->City) . "-" . $facility->StateAbbreviation . "-". $facility->PostalCode ."/" . $facility->Id . "/'" . "class='btn'>"?> <?php _e('more info','chicagostorage'); ?></a>
-       </div>
-   </div>
-   <?php
-      endforeach;
-   }
-   elseif (!empty($facilities) && $facilities->ReplyCode <> -1)
-   {
-            $facility = $facilities;
-    ?>
-             <div class="item">
-
-           <div class="photo">
-               <img width="128" height="96" src="http://www.storage.com/z-images/<?php echo $facility->SiteSource; ?>/128x96/<?php echo $facility->Images->string[0]; ?>" class="attachment-archive-thumbnail wp-post-image" alt="img1" />
-           </div>
-
-       <div class="info">
-           <strong class="title"><a href="<?php echo "<a href='/facility/" . $facility->Id  ?>"><?php echo $facility->Branding ?></a></strong>
-               <?php echo $facility->Address . "<br />"; 
-                     echo $facility->City . " , " . $facility->StateAbbreviation . " " . $facility->PostalCode . "<br />";
-               ?>
-           <div class="rating"></div>
-       </div>
-           <div class="price-holder">
-               <span><?php _e('units from','chicagostorage'); ?></span>
-               <strong><?php echo '$' . number_format($facility->StartingAtPrice, 2); ?></strong>
-           </div>
-       <div class="btn-holder">
-           <?php echo "<a href='/" . display_url($facility->Branding) . "-" . display_url($facility->Address) . "-" . display_url($facility->City) . "-" . $facility->StateAbbreviation . "-". $facility->PostalCode ."/" . $facility->Id . "/'" . "class='btn'>"?> <?php _e('more info','chicagostorage'); ?></a>
-       </div>
-   </div>
-   <?php   
-   }
-   else
-   {
+      </div>
+      <div class="row">  
+        <div class="price-holder">
+            <span><?php _e('units from','chicagostorage'); ?></span>
+           <strong><?php echo '$' . number_format($facility->StartingAtPrice, 2); ?></strong>
+        </div>
+        <div class="btn-holder">
+            <a href="/<?php echo display_url($facility->Branding) . '-' . display_url($facility->Address) . '-' . display_url($facility->City) . '-' . $facility->StateAbbreviation . '-'. $facility->PostalCode .'/' . $facility->Id . '/' ?>" class="btn"><?php _e('more info','chicagostorage'); ?></a>
+        </div>
+      </div>
+    </div>
+<?php   
+   }else{
        get_template_part('blocks/facilities-not-found');
    }
 

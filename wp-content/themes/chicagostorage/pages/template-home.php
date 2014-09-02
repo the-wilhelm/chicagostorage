@@ -30,7 +30,7 @@ $facilities = $returned_facilities->searchFacilitiesResult->searchFacilities_Res
 									<strong class="title"><?php echo _e($facility->Branding,'chicagostorage'); ?></strong>
 									<?php echo "<p>" . $facility->Address . "<br/>";
                                     echo $facility->City. " , " . $facility->StateAbbreviation . " " . $facility->PostalCode . "<br /></p>"; 
-									echo "<a href='/facility/" . $facility->Id . "'"; ?> class='btn'><span><?php _e('select this facility','chicagostorage'); ?> <i class="icon-caret-right"></i></span></a>
+									echo "<a href='facility/" . $facility->Id . "'"; ?> class='btn'><span><?php _e('select this facility','chicagostorage'); ?> <i class="icon-caret-right"></i></span></a>
 								</div>
 							</li>
 						<?php endforeach; ?>

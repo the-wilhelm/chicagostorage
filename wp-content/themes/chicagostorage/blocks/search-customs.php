@@ -9,8 +9,8 @@
             <h3><?php echo $title; ?></h3>
         <?php endif; ?>
         <div class="btn-holder">
-            <a href="<?php echo "/5x5"; ?>" class="btn"><span><?php _e('search '. "5x5".' units','chicagostorage') ?> <i class="icon-caret-right"></i></span></a>
-            <a href="<?php echo "/5x10"; ?>" class="btn"><span><?php _e('search '. "5x10".' units','chicagostorage') ?> <i class="icon-caret-right"></i></span></a>
+            <a href="<?php echo "5x5"; ?>" class="btn"><span><?php _e('search '. "5x5".' units','chicagostorage') ?> <i class="icon-caret-right"></i></span></a>
+            <a href="<?php echo "5x10"; ?>" class="btn"><span><?php _e('search '. "5x10".' units','chicagostorage') ?> <i class="icon-caret-right"></i></span></a>
         </div>
     </section>
 <?php endif; ?>
